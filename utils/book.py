@@ -3,7 +3,10 @@ from datetime import datetime, timedelta
 
 
 @dataclass
-class Book():
+class Book:
+    """
+    Class representing a Book.
+    """
     id: int
     title: str
     description: str
@@ -11,8 +14,11 @@ class Book():
     excerpt: str
     publishDate: str
     
-    def __eq__(self, other):
-        # Custom comparison logic
+    def __eq__(self, other) -> bool:
+        """
+        Custom comparison logic.
+        Had to implement some logic cause ofthe time difference  of the response.
+        """
         if self.id != other.id:
             return False
         
@@ -36,13 +42,18 @@ class Book():
 
         return True
     
-    def __post_init__(self):
+    def __post_init__(self) -> None:
+        """
+        Post initialization method to adjust the publishDate.
+        """
         # Extract the date component
         self.publishDate = self.add_plus_timezone()
         self.publishDate = self.adjust_microseconds_digits()
         
-    def adjust_microseconds_digits(self, position=26):
-        """Removes the 7th microsecond because the datetime.fromisoformat() doesn't allow it.
+    def adjust_microseconds_digits(self, position: int = 26) -> str:
+        """
+        For the sake of datetime.fromisoformat() method, microseconds digits
+        should be adjusted.
         """
         pdate_array = self.publishDate.split("+")
         without_tz_date = pdate_array[0]
@@ -54,8 +65,9 @@ class Book():
         else:
             return self.publishDate
         
-    def add_plus_timezone(self):
-        """Add the +00:00 timezone when needed.
+    def add_plus_timezone(self) -> str:
+        """
+        Add the +00:00 timezone when needed.
         """
         if self.publishDate.endswith("z"):
             return self.publishDate[:-1] + "+00:00"
