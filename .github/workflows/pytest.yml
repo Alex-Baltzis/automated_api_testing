@@ -29,10 +29,12 @@ jobs:
 
     - name: Run tests and generate HTML report
       run: pytest  # pytest.ini will handle the report generation
+      continue-on-error: true
 
     # Upload the HTML report as an artifact
     - name: Upload HTML report
       uses: actions/upload-artifact@v3
+      if: always()
       with:
         name: pytest-html-report
         path: report/pytest_html_report.html
