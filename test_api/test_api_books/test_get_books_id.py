@@ -4,6 +4,9 @@ from datetime import datetime
 
 
 def test_get_book_by_id():
+    """
+    Tests that the API returns a book by given id
+    """
     my_api_client = APIClient()
     book_id = 1
     response = my_api_client.get(f"Books/{book_id}")
@@ -18,6 +21,9 @@ def test_get_book_by_id():
     assert book_response == expected_book
     
 def test_get_non_existing_book():
+    """
+    Tests that the API returns 404 for a non-existing book id
+    """
     my_api_client = APIClient()
     non_existing_book_id = 10000
     response = my_api_client.get(f"Books/{non_existing_book_id}")
@@ -25,6 +31,9 @@ def test_get_non_existing_book():
     
     
 def test_get_book_by_id_invalid_id():
+    """
+    Tests that the API returns 400 for an invalid book id
+    """
     my_api_client = APIClient()
     book_id = "jk"
     response = my_api_client.get(f"Books/{book_id}")
@@ -32,6 +41,9 @@ def test_get_book_by_id_invalid_id():
     
     
 def test_get_book_by_id_zero_id():
+    """
+    Tests that the API returns 404 for book id 0
+    """
     my_api_client = APIClient()
     book_id = 0
     response = my_api_client.get(f"Books/{book_id}")
@@ -39,6 +51,9 @@ def test_get_book_by_id_zero_id():
     
     
 def test_get_book_by_id_negative_id():
+    """
+    Tests that the API returns 404 for a negative book id
+    """
     my_api_client = APIClient()
     book_id = -2
     response = my_api_client.get(f"Books/{book_id}")

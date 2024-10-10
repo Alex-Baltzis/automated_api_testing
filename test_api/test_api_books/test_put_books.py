@@ -3,6 +3,9 @@ from automated_api_testing.utils.book import Book
 from datetime import datetime
 
 def test_update_an_existing_book():
+    """
+    Tests that the API updates an existing book by given id
+    """
     my_api_client = APIClient()
     id_to_update = 22
     current_time = datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")
@@ -20,6 +23,9 @@ def test_update_an_existing_book():
     
     
 def test_update_a_book_with_wrong_id_body():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"idea": 222,
                          "title": "updated_book",
@@ -32,6 +38,9 @@ def test_update_a_book_with_wrong_id_body():
 
 
 def test_update_a_book_with_wrong_title_body():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "tit": "updated_book",
@@ -44,6 +53,9 @@ def test_update_a_book_with_wrong_title_body():
     
     
 def test_update_a_book_with_wrong_description_body():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -56,6 +68,9 @@ def test_update_a_book_with_wrong_description_body():
 
 
 def test_update_a_book_with_wrong_pageCount_body():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -68,6 +83,9 @@ def test_update_a_book_with_wrong_pageCount_body():
     
     
 def test_update_a_book_with_wrong_excerpt_body():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -80,6 +98,9 @@ def test_update_a_book_with_wrong_excerpt_body():
     
     
 def test_update_a_book_with_wrong_publishDate_body():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -92,6 +113,9 @@ def test_update_a_book_with_wrong_publishDate_body():
     
     
 def test_update_a_book_with_negative_id_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": -1,
                          "title": "updated_book",
@@ -104,6 +128,9 @@ def test_update_a_book_with_negative_id_value():
     
     
 def test_update_a_book_with_no_id_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"title": "updated_book",
                          "description": "desc",
@@ -115,6 +142,9 @@ def test_update_a_book_with_no_id_value():
 
 
 def test_update_a_book_with_wrong_title_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": 464,
@@ -127,6 +157,9 @@ def test_update_a_book_with_wrong_title_value():
     
     
 def test_update_a_book_with_no_title_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 56,
                          "description": "desc",
@@ -137,6 +170,9 @@ def test_update_a_book_with_no_title_value():
     assert response.status_code == 405
     
 def test_update_a_book_with_wrong_description_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -149,6 +185,9 @@ def test_update_a_book_with_wrong_description_value():
     
     
 def test_update_a_book_with_no_description_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -160,6 +199,9 @@ def test_update_a_book_with_no_description_value():
     
     
 def test_update_a_book_with_negative_pagecount_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -172,6 +214,9 @@ def test_update_a_book_with_negative_pagecount_value():
     
     
 def test_update_a_book_with_no_pagecount_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -183,6 +228,9 @@ def test_update_a_book_with_no_pagecount_value():
     
     
 def test_update_a_book_with_wrong_excerpt_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -195,6 +243,9 @@ def test_update_a_book_with_wrong_excerpt_value():
     
     
 def test_update_a_book_with_no_excerpt_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -206,6 +257,9 @@ def test_update_a_book_with_no_excerpt_value():
     
     
 def test_update_a_book_with_wrong_publishdate_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -218,6 +272,9 @@ def test_update_a_book_with_wrong_publishdate_value():
     
     
 def test_update_a_book_with_no_publishdate_value():
+    """
+    Tests that the API returns 405 if the body is wrong
+    """
     my_api_client = APIClient()
     updated_book_info = {"id": 222,
                          "title": "updated_book",
@@ -226,6 +283,4 @@ def test_update_a_book_with_no_publishdate_value():
                          "excerpt": "excerpt"}
     response = my_api_client.put("Books", data=updated_book_info)   
     assert response.status_code == 405
-        
-    
     
