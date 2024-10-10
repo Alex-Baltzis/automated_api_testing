@@ -2,6 +2,9 @@ from automated_api_testing.utils.api_client import APIClient
 from automated_api_testing.utils.book import Book
 
 def test_create_a_book():
+    """
+    Tests that the API creates a book with valid data
+    """
     my_api_client = APIClient()
     book_info = {"id": 222,
                  "title": "new_post_book",
@@ -16,6 +19,9 @@ def test_create_a_book():
     assert response_book == expected_book
     
 def test_create_a_book_with_wrong_id_body():
+    """
+    Tests that the API returns 400 status code when the book is created with wrong id body
+    """
     my_api_client = APIClient()
     new_book_info = {"idea": 222,
                      "title": "new_post_book",
@@ -28,6 +34,9 @@ def test_create_a_book_with_wrong_id_body():
 
 
 def test_create_a_book_with_wrong_title_body():
+    """
+    Tests that the API returns 400 status code when the book is created with wrong title body
+    """
     my_api_client = APIClient()
     new_book_info = {"id": 222,
                      "tit": "new_post_book",
@@ -40,6 +49,9 @@ def test_create_a_book_with_wrong_title_body():
     
     
 def test_create_a_book_with_wrong_description_body():
+    """
+    Tests that the API returns 400 status code when the book is created with wrong description body
+    """
     my_api_client = APIClient()
     new_book_info = {"id": 222,
                      "title": "new_post_book",
@@ -52,6 +64,9 @@ def test_create_a_book_with_wrong_description_body():
 
 
 def test_create_a_book_with_wrong_pageCount_body():
+    """
+    Tests that the API returns 400 status code when the book is created with wrong pageCount body
+    """
     my_api_client = APIClient()
     new_book_info = {"id": 222,
                      "title": "new_post_book",
@@ -64,6 +79,9 @@ def test_create_a_book_with_wrong_pageCount_body():
     
     
 def test_create_a_book_with_wrong_excerpt_body():
+    """
+    Tests that the API returns 400 status code when the book is created with wrong excerpt body
+    """
     my_api_client = APIClient()
     new_book_info = {"id": 222,
                      "title": "new_post_book",
@@ -76,6 +94,9 @@ def test_create_a_book_with_wrong_excerpt_body():
     
     
 def test_create_a_book_with_wrong_publishDate_body():
+    """
+    Tests that the API returns 400 status code when the book is created with wrong publishDate body
+    """
     my_api_client = APIClient()
     new_book_info = {"id": 222,
                      "title": "new_post_book",
@@ -88,6 +109,9 @@ def test_create_a_book_with_wrong_publishDate_body():
     
     
 def test_create_a_book_with_negative_id_value():
+    """
+    Tests that the API returns 400 status code when the book is created with negative id value
+    """
     my_api_client = APIClient()
     new_book_info = {"id": -1,
                      "title": "new_post_book",
@@ -100,6 +124,9 @@ def test_create_a_book_with_negative_id_value():
     
     
 def test_create_a_book_with_no_id_value():
+    """
+    Tests that the API creates a book with no id value
+    """
     my_api_client = APIClient()
     new_book_info = {"title": "new_post_book",
                      "description": "desc",
@@ -115,6 +142,9 @@ def test_create_a_book_with_no_id_value():
 
 
 def test_create_a_book_with_wrong_title_value():
+    """
+    Tests that the API returns 400 status code when the book is created with wrong title value
+    """
     my_api_client = APIClient()
     new_book_info = {"id": 222,
                      "title": 464,
@@ -127,6 +157,9 @@ def test_create_a_book_with_wrong_title_value():
     
     
 def test_create_a_book_with_no_title_value():
+    """
+    Tests that the API creates a book with no title value
+    """
     my_api_client = APIClient()
     new_book_info = {"id": 56,
                      "description": "desc",
@@ -141,6 +174,9 @@ def test_create_a_book_with_no_title_value():
     assert response_book == new_book
     
 def test_create_a_book_with_wrong_description_value():
+    """
+    Tests that the API returns 400 status code when the book is created with wrong description value
+    """
     my_api_client = APIClient()
     new_book_info = {"id": 222,
                      "title": "new_post_book",
@@ -153,6 +189,9 @@ def test_create_a_book_with_wrong_description_value():
     
     
 def test_create_a_book_with_no_description_value():
+    """
+    Tests that the API creates a book with no description value
+    """
     my_api_client = APIClient()
     new_book_info = {"id": 222,
                      "title": "new_post_book",
@@ -168,6 +207,9 @@ def test_create_a_book_with_no_description_value():
     
     
 def test_create_a_book_with_negative_pagecount_value():
+    """
+    Tests that the API returns 400 status code when the book is created with negative pageCount value
+    """
     my_api_client = APIClient()
     new_book_info = {"id": 222,
                      "title": "new_post_book",
@@ -180,6 +222,9 @@ def test_create_a_book_with_negative_pagecount_value():
     
     
 def test_create_a_book_with_no_pagecount_value():
+    """
+    Tests that the API creates a book with no pageCount value
+    """
     my_api_client = APIClient()
     new_book_info = {"id": 222,
                      "title": "new_post_book",
