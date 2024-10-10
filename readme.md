@@ -24,6 +24,19 @@ A user has the ability to selectively locally run the tests (using something lik
 
 An automated CI logic has also been implemented. Every time something is pushed or merged into the origin/master branch an action is triggered, the tests run and a report is produced as an artifact, giving detailed overview to the user how his/her commits affected the project. 
 
+### Structure
+1. All the tests ofthe project exists within the `test_api` folder.  
+A subdirectory for each topic exists and then a .py for rach endpoint containing  
+all the corresponding testcases of the later one.  
+
+2. Helping classes are contained within the `utils` folder.   
+    - __ApiClient__ helping constructing all the http comands
+    - __Book__ helping constructing and comparing book related responses
+    - __Author__ helping constructing and comparing author related responses
+    
+3. The report generated files exists in `report`  
+4. Any needed settings in `config`--> `settings.py`. For the time being, only the base url of the API under testing is set up there
+
 ---
 
 ## Prerequisites
@@ -98,6 +111,7 @@ deactivate
 ```
 
 ---
+
 ## Test report
 
 Once the tests have run, an automated report (pytest_html_report.html) will be generated within the  
