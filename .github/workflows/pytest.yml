@@ -15,10 +15,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.8'
 
@@ -27,9 +27,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Create report directory
+      run: mkdir -p report
+
     - name: Run tests and generate HTML report
-      run: |
-        pytest 
+      run: pytest  # pytest.ini will handle the report generation
 
     # Upload the HTML report as an artifact
     - name: Upload HTML report
