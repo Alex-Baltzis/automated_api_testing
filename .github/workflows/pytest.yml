@@ -27,9 +27,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Create report directory
-      run: if not exist report ( mkdir report )
-
     - name: Run tests and generate HTML report
       run: pytest  # pytest.ini will handle the report generation
 
