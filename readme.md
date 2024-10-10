@@ -23,7 +23,7 @@ The API used is a mocked one by https://fakerestapi.azurewebsites.net/index.html
 A user has the ability to selectively locally run the tests (using something like Python Test Explorer for Visual Studio Code) or batch run them using the pytest command in the main project directory.  
 
 > [!WARNING]
-> Whenever one would like to batch run the tests locally using the `pytest.ini` command  
+> Whenever one would like to batch run the tests locally using the `pytest` command  
 it is advisable to have to `pytest.ini` in the directory. But when one wants to  
 selectively run tests using the before mentioned Python Test Explorer for Visual Studio Code  
 he/she has to remove the `pytest.ini` from the directory because it somehow inteferes with  
