@@ -2,6 +2,9 @@ from automated_api_testing.utils.api_client import APIClient
 from automated_api_testing.utils.author import Author
 
 def test_get_all_authors():
+    """
+    Tests that the API returns all authors
+    """
     my_api_client = APIClient()
     response = my_api_client.get("Authors")   
     assert response.status_code == 200
