@@ -29,7 +29,6 @@ jobs:
 
     - name: Run tests and generate HTML report
       run: |
-        mkdir -p report
         pytest 
 
     # Upload the HTML report as an artifact
