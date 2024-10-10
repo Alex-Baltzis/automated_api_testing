@@ -130,3 +130,11 @@ One could check the artifact by
 - Going to the Actions  
 - Click on a desired action
 - at the end there will be the pytest-html-report.html artifact
+
+
+> [!WARNING]
+> Whenever one would like to batch run the tests locally using the `pytest.ini` command  
+it is advisable to have to `pytest.ini` in the directory. But when one wants to  
+selectively run tests using the before mentioned Python Test Explorer for Visual Studio Code  
+he/she has to remove the `pytest.ini` from the directory because it somehow inteferes with  
+the execution of the extension.
