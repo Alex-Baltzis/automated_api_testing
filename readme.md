@@ -12,7 +12,7 @@ A brief description of your project. Explain what it does and what its purpose i
    - [3. Activate the virtual environment](#3-activate-the-virtual-environment)
    - [4. Install dependencies](#4-install-dependencies)
    - [5. Run the project](#5-run-the-project)
-4. [Test report](#Test-report)
+4. [Test report](#test-report)
 
 ---
 
@@ -32,12 +32,12 @@ the execution of the extension.
 An automated CI logic has also been implemented. Every time something is pushed or merged into the origin/master branch an action is triggered, the tests run and a report is produced as an artifact, giving detailed overview to the user how his/her commits affected the project. 
 
 ### Structure
-1. All the tests ofthe project exists within the `test_api` folder.  
-A subdirectory for each topic exists and then a .py for rach endpoint containing  
+1. All the tests of the project exists within the `test_api` folder.  
+A subdirectory for each topic exists and then a .py for each endpoint containing  
 all the corresponding testcases of the later one.  
 
 2. Helping classes are contained within the `utils` folder.   
-    - __ApiClient__ helping constructing all the http comands
+    - __ApiClient__ helping constructing all the http commands
     - __Book__ helping constructing and comparing book related responses
     - __Author__ helping constructing and comparing author related responses
     
@@ -61,6 +61,31 @@ Before setting up the project, make sure you have the following tools installed:
 ## Project Setup Instructions
 
 Follow the steps below to set up the project on your local machine:
+
+### 0. Create a PYTHONPATH env variable
+
+The project is structures in such way that all modules can access every file in that by beginning from the root directory  
+of `automated_api_testing`. To accomplish that, one must create an env variable to ensure that python has access to that.
+
+- Search for 'edit system environmental variables'
+- Click on Environmental Variables....
+- On the System variables section click New...
+- Variable name: PYTHONPATH  Variable value: The directory which containes the `automated_api_testing` project
+
+### 1. Clone the repository
+
+Go to your desired location
+
+```
+cd <desired_path>
+```
+
+Clone the project from the GitHub repository:
+
+```bash
+git clone https://github.com/Alex-Baltzis/automated_api_testing.git
+cd automated_api_testing
+```
 
 ### 1. Clone the repository
 
@@ -98,7 +123,7 @@ activate
 
 ### 4. Install dependencies
 With the virtual environment activated, install the required dependencies using  
-`requirements.txt`. You have to navigate to the main project directory (/automated_api_testing)
+`requirements.txt`. You have to navigate to the main project directory `/automated_api_testing`
 ```
 cd ..
 cd ..
@@ -121,8 +146,8 @@ deactivate
 
 ## Test report
 
-Once the tests have run, an automated report (pytest_html_report.html) will be generated within the  
-/report folder. By opening that, one can see the results of the run.    
+Once the tests have run, an automated report `pytest_html_report.html` will be generated within the  
+`/report` folder. By opening that, one can see the results of the run.    
 
 <figure>
   <img src="https://pbs.twimg.com/media/EhAJhF-X0AABPp_.jpg:large" alt="Image description">
@@ -136,5 +161,5 @@ As previously mentioned very time something is pushed or merged into the origin/
 One could check the artifact by  
 - Going to the Actions  
 - Click on a desired action
-- at the end there will be the pytest-html-report.html artifact
+- at the end there will be the `pytest-html-report.html` artifact
 
