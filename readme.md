@@ -12,7 +12,7 @@ A brief description of your project. Explain what it does and what its purpose i
    - [3. Activate the virtual environment](#3-activate-the-virtual-environment)
    - [4. Install dependencies](#4-install-dependencies)
    - [5. Run the project](#5-run-the-project)
-4. [Test report](#Test report)
+4. [Test report](#Test-report)
 
 ---
 
